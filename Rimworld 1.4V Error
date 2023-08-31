@@ -1,0 +1,19 @@
+Root level exception in OnGUI(): System.TypeLoadException: VTable setup of type Teleportation.Building_Teleporter failed
+  at System.Reflection.MonoCMethod.InternalInvoke (System.Object obj, System.Object[] parameters) [0x00018] in <eae584ce26bc40229c1b1aa476bfa589>:0 
+  at System.RuntimeType.CreateInstanceMono (System.Boolean nonPublic) [0x000a8] in <eae584ce26bc40229c1b1aa476bfa589>:0 
+  at System.RuntimeType.CreateInstanceSlow (System.Boolean publicOnly, System.Boolean skipCheckThis, System.Boolean fillCache, System.Threading.StackCrawlMark& stackMark) [0x00009] in <eae584ce26bc40229c1b1aa476bfa589>:0 
+  at System.RuntimeType.CreateInstanceDefaultCtor (System.Boolean publicOnly, System.Boolean skipCheckThis, System.Boolean fillCache, System.Threading.StackCrawlMark& stackMark) [0x00027] in <eae584ce26bc40229c1b1aa476bfa589>:0 
+  at System.Activator.CreateInstance (System.Type type, System.Boolean nonPublic) [0x00020] in <eae584ce26bc40229c1b1aa476bfa589>:0 
+  at System.Activator.CreateInstance (System.Type type) [0x00000] in <eae584ce26bc40229c1b1aa476bfa589>:0 
+  at (wrapper dynamic-method) Verse.ThingMaker.Verse.ThingMaker.MakeThing_Patch1(Verse.ThingDef,Verse.ThingDef)
+  at RimWorld.Designator_Build.DesignateSingleCell (Verse.IntVec3 c) [0x00096] in <1a99832471b046408678c845f00d13b6>:0 
+  at Verse.DesignatorManager.ProcessInputEvents () [0x00058] in <1a99832471b046408678c845f00d13b6>:0 
+  at RimWorld.MapInterface.HandleMapClicks () [0x0000f] in <1a99832471b046408678c845f00d13b6>:0 
+  at RimWorld.UIRoot_Play.UIRootOnGUI () [0x00093] in <1a99832471b046408678c845f00d13b6>:0 
+  at (wrapper dynamic-method) Verse.Root.Verse.Root.OnGUI_Patch1(Verse.Root)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Verse.Log:Error (string)
+(wrapper dynamic-method) Verse.Root:Verse.Root.OnGUI_Patch1 (Verse.Root)
+
+
+This has happened because the VTable is out of date in the dll code.
