@@ -1,0 +1,2 @@
+This is where the error occurs. because the handlers are outdated for the GUI the teleporter object will always fail to be placed by the user. aka we need to update the dll file
+to use a more modrenized form of the Rimworld code.
